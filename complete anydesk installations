@@ -1,0 +1,16 @@
+#!/bin/bash
+read -p "enter your password"
+
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+
+echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-s>
+
+apt update
+
+apt install anydesk
+
+echo prox@123 | sudo anydesk --set-password
+
+sudo anydesk --get-id
+
+echo "anydesk installed"
